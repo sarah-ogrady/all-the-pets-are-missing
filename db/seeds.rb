@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+100.times do
+  puts "creating a pet"
+  pet = Pet.create(
+    name: Faker::Superhero.name,
+    species: %w(fish dog sloth human centipede lion cat rabbit).sample,
+    address: Faker::Address.street_address,
+    found_on: Faker::Date.backward(days: 14)
+    )
+  puts "finished creating pet #{pet.id}"
+end
